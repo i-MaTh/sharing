@@ -38,15 +38,8 @@ def cal_merge(path):
 	combine.to_csv('temp.csv', index = None)
 
 if __name__ == '__main__':
-	path = 'C:\\Users\\Administrator\\Desktop\\ByteCup\\code\\'
+	path = '../ByteCup/'
 	#cal_pQAndpU(path + 'train.csv')
-	'''
-	train = pd.read_csv(path + 'train.csv')
-	#print(len(train['qid'].unique()), len(train['uid'].unique()))
-	validate = pd.read_csv(path + 'validate.csv').fillna(-1)
-	temp = train.append(validate)
-	print(len(temp['qid'].unique()), len(temp['uid'].unique())) #(7778, 27937)分别对应问题的个数和专家的个数
-	'''
 	cal_val(path)
 	#cal_merge(path)
 
