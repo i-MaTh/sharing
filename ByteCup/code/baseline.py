@@ -8,15 +8,12 @@ Created on Thu Sep 12 19:00:00 2016
 import numpy as np
 import pandas as pd
 import csv
-from collections import Counter
 
 def cal_pQAndpU(path):
 	# 分别计算每个专家回答问题的概率和每个问题被专家回答的概率
-	#data_1[data_1['qid'].isin(data_2['qid'])] #isin()函数可方便地过滤DataFrame中的数据
 	data = pd.read_csv(path)
 	prob_q = 1.0 * data[data.label == 1]['qid'].value_counts() / data['qid'].value_counts()
 	prob_u = 1.0 * data[data.label == 1]['uid'].value_counts() / data['uid'].value_counts()
-
 	prob_q.fillna(0).to_csv('prob_q.csv', header = ['prob_q'])
 	prob_u.fillna(0).to_csv('prob_u.csv', header = ['prob_u'])
 
