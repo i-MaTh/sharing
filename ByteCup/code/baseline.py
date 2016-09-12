@@ -23,7 +23,7 @@ def cal_val(path):
 	prob_q = pd.read_csv(path + 'prob_q.csv')
 	prob_u = pd.read_csv(path + 'prob_u.csv')
 	combine = pd.merge(val_data, prob_q, on='qid',how='left').fillna(prob_q.mean()[0])
-	combine = pd.merge(combine, prob_u, on='uid', how='left').fillna(prob_u.mean()[0])  #均值填补由于中位数填补
+	combine = pd.merge(combine, prob_u, on='uid', how='left').fillna(prob_u.mean()[0])  #均值填补优于中位数填补
 	combine['label'] = combine['prob_q'] * combine['prob_u']
 	combine[['qid','uid','label']].to_csv('temp.csv', index = None)
 
