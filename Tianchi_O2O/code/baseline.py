@@ -15,7 +15,7 @@ np.random.seed(seed)
 
 
 if __name__ == '__main__':
-    path = 'F:\\competition\\CCF-O2O\\'
+    path = '.\\CCF-O2O\\'
     train1 = pd.read_csv(path + 'train_fea_0515.csv')
     train2 = pd.read_csv(path + 'train_fea_0630.csv')
     train = pd.concat([train1, train2])
