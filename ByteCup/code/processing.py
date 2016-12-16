@@ -8,7 +8,7 @@ Created on Sat Nov 19 15:18:33 2016
 import pandas as pd
 import numpy as np
 
-path = 'F:\\competition\\ByteCup\\bytecup2016data\\'
+path = '.\\bytecup2016data\\'
 
 train = pd.read_table(path + 'invited_info_train.txt', names = ['qid', 'uid', 'label'])
 #print train.shape # (245752, 3)
