@@ -83,9 +83,10 @@ if __name__ == '__main__':
         for key in gby_uploader:
             if test_set['target'][i] == -1 or \
             (test_set['source'][i] in gby_uploader[key] and test_set['target'][i] in gby_uploader[key]):
-                labels.append(1)
+                label=1
             else:
-                labels.append(0)
+                label=0
+        labels.append(label)
 
     submission = pd.DataFrame()
     submission['edge_id'] = test_set.edge_id
